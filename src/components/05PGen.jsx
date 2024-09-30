@@ -10,9 +10,15 @@ export default function PGen() {
         let pass = ""   
         let str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
         if (numberAllowed) str += "0123456789"
-        if (numberAllowed) str += "@#$%&*^~_+[]{}\|<>"
-    })
+        if (charAllowed) str += "@#$%&*^~_+[]-{}\|<>"
 
+        for (let i = 0; i <= length; i++) {
+            let char = Math.floor(Math.random() * str.length + 1)
+
+            pass= str.charAt(char)
+        }
+    setPassword(pass)},[length, numberAllowed, charAllowed, setPassword ])
+    PasswordGenerator()
   return (
     <>
     
